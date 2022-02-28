@@ -1,0 +1,27 @@
+create table wallet_table(
+        address_index integer,
+        userId text,
+        public_key text,
+        token_symbol text,
+        balance text,
+        UNIQUE(userId, address_index, public_key),
+        primary key(userId, address_index));
+
+
+create table token_details(
+        token_symbol text
+        token_address text,
+        chain_id text
+)
+
+
+create table transaction_table(
+        id integer primary key autoincrement,
+        type text,
+        amount text,
+        sender text,
+        recepient text,
+        txn_hash text,
+        token_address text);
+
+insert into transaction_table(type, amount, sender, recepient, txn_hash, token_address) values('Withdraw', 16500000000000000000, '0x6f54AE0A9EF914C71bce845054C4922ceA6a01Bd', '0xaef63a9a8fe5eacf8d15f9916d77ecb95b805513', 'b'b\x8c\xe3\xd8\xa2=\x07\xb8k\xb41\x05\xdaw\xfbJ\xec\xde]\xaa\x1b\x8d*\xb2\xb7\x1d\x98<\x8e\xf1\x83\x97'', '0x30c192788496fAC4BB212d2f733409755051C648');
